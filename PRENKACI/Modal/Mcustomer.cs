@@ -9,6 +9,8 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Data.SqlClient;
 using System.Configuration;
+using System.Collections;
+using System.Windows.Interop;
 
 namespace PRENKACI.Modal
 {
@@ -38,6 +40,45 @@ namespace PRENKACI.Modal
         {
             TbID.Enabled = false;
             BtnDelete.Enabled = _ctm.TypeForm != "I";
+
+            if (_ctm.TypeForm == "U")
+            {
+                var query = "SELECT id, name, born, born_place, nik, " +
+                    "(CASE WHEN gender = 'L' THEN 'Laki-laki' ELSE 'Perempuan' END) as gender, " +
+                    "address " +
+                    "FROM customer WHERE id = @id";
+                using (SqlConnection conn = new SqlConnection(connStr))
+                {
+                    conn.Open();
+                    using (SqlCommand cmd = new SqlCommand(@query, conn))
+                    {
+                        cmd.Parameters.AddWithValue("@id", _ctm.DfId);
+                        cmd.ExecuteNonQuery();
+
+                        DataTable dt = new DataTable();
+                        SqlDataAdapter da = new SqlDataAdapter(cmd);
+                        da.Fill(dt);
+
+                        if (dt.Rows.Count > 0)
+                        {
+                            var year = dt.Rows[0].Field<decimal>(2).ToString().Substring(0, 4);
+                            var month = dt.Rows[0].Field<decimal>(2).ToString().Substring(4, 2);
+                            var day = dt.Rows[0].Field<decimal>(2).ToString().Substring(6, 2);
+
+                            TbID.Text = (dt.Rows[0].Field<string>(0)).ToString();
+                            TbName.Text = dt.Rows[0].Field<string>(1).ToString();
+                            TbBornPlace.Text = dt.Rows[0].Field<string>(3).ToString();
+                            TbNik.Text = dt.Rows[0].Field<string>(4).ToString();
+                            CbGender.SelectedItem = dt.Rows[0].Field<string>(5).ToString();
+                            TbAddress.Text = dt.Rows[0].Field<string>(6).ToString();
+                            DtBorn.Value = new DateTime(Convert.ToInt32(year), Convert.ToInt32(month), Convert.ToInt32(day));
+                        }
+                    }
+                    conn.Close();
+                }
+            }
+            else
+                ClearForm();
 
         }
 
@@ -132,8 +173,9 @@ namespace PRENKACI.Modal
             }
             else
             {
+                id = TbID.Text;
                 query = "UPDATE customer SET name = @name, born = @born, " +
-                    "born_place = @born_place, nik = @nik, gender = @gender, address = @address " +
+                    "born_place = @born_place, nik = @nik, gender = @gender, address = @address, " +
                     "updated_date = @updated_date, updated_time = @updated_time WHERE " +
                     "id = @id";
             }

@@ -79,6 +79,7 @@
             this.DgvCustomer.RowTemplate.Height = 24;
             this.DgvCustomer.Size = new System.Drawing.Size(997, 322);
             this.DgvCustomer.TabIndex = 3;
+            this.DgvCustomer.DoubleClick += new System.EventHandler(this.DgvCustomer_DoubleClick);
             // 
             // BtnSearch
             // 
@@ -88,6 +89,7 @@
             this.BtnSearch.TabIndex = 4;
             this.BtnSearch.Text = "Search";
             this.BtnSearch.UseVisualStyleBackColor = true;
+            this.BtnSearch.Click += new System.EventHandler(this.BtnSearch_Click);
             // 
             // TbSearch
             // 

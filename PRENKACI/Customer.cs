@@ -74,5 +74,21 @@ namespace PRENKACI
                 conn.Close();
             }
         }
+
+        private void BtnSearch_Click(object sender, EventArgs e)
+        {
+            initialData(TbSearch.Text);
+        }
+
+        private void DgvCustomer_DoubleClick(object sender, EventArgs e)
+        {
+            if (DgvCustomer.SelectedRows.Count > 0)
+            {
+                DfId = DgvCustomer.SelectedRows[0].Cells[0].Value + string.Empty;
+                TypeForm = "U";
+                Mcustomer popup = new Mcustomer(this);
+                popup.ShowDialog();
+            }
+        }
     }
 }
