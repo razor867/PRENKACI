@@ -36,11 +36,14 @@
             this.label5 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
+            this.label8 = new System.Windows.Forms.Label();
+            this.PcPosition = new System.Windows.Forms.PictureBox();
             this.PcEmployee = new System.Windows.Forms.PictureBox();
             this.PcRentData = new System.Windows.Forms.PictureBox();
             this.PcCustomer = new System.Windows.Forms.PictureBox();
             this.PcVehicle = new System.Windows.Forms.PictureBox();
             this.PcManufacture = new System.Windows.Forms.PictureBox();
+            ((System.ComponentModel.ISupportInitialize)(this.PcPosition)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.PcEmployee)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.PcRentData)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.PcCustomer)).BeginInit();
@@ -122,6 +125,26 @@
             this.label7.Text = "Employee";
             this.label7.TextAlign = System.Drawing.ContentAlignment.TopCenter;
             // 
+            // label8
+            // 
+            this.label8.Location = new System.Drawing.Point(565, 152);
+            this.label8.Name = "label8";
+            this.label8.Size = new System.Drawing.Size(100, 23);
+            this.label8.TabIndex = 14;
+            this.label8.Text = "Position";
+            this.label8.TextAlign = System.Drawing.ContentAlignment.TopCenter;
+            // 
+            // PcPosition
+            // 
+            this.PcPosition.Image = global::PRENKACI.Properties.Resources.position;
+            this.PcPosition.Location = new System.Drawing.Point(565, 92);
+            this.PcPosition.Name = "PcPosition";
+            this.PcPosition.Size = new System.Drawing.Size(100, 58);
+            this.PcPosition.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.PcPosition.TabIndex = 13;
+            this.PcPosition.TabStop = false;
+            this.PcPosition.Click += new System.EventHandler(this.PcPosition_Click);
+            // 
             // PcEmployee
             // 
             this.PcEmployee.Image = global::PRENKACI.Properties.Resources.employee;
@@ -183,6 +206,8 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(711, 360);
+            this.Controls.Add(this.label8);
+            this.Controls.Add(this.PcPosition);
             this.Controls.Add(this.PcEmployee);
             this.Controls.Add(this.label7);
             this.Controls.Add(this.label6);
@@ -199,6 +224,7 @@
             this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.Name = "Home";
             this.Text = "Home";
+            ((System.ComponentModel.ISupportInitialize)(this.PcPosition)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.PcEmployee)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.PcRentData)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.PcCustomer)).EndInit();
@@ -224,6 +250,8 @@
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.PictureBox PcEmployee;
+        private System.Windows.Forms.PictureBox PcPosition;
+        private System.Windows.Forms.Label label8;
     }
 }
 

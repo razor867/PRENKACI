@@ -74,6 +74,12 @@
     <Compile Include="Customer.Designer.cs">
       <DependentUpon>Customer.cs</DependentUpon>
     </Compile>
+    <Compile Include="Employee.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Employee.Designer.cs">
+      <DependentUpon>Employee.cs</DependentUpon>
+    </Compile>
     <Compile Include="Home.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -92,17 +98,35 @@
     <Compile Include="Modal\Mcustomer.Designer.cs">
       <DependentUpon>Mcustomer.cs</DependentUpon>
     </Compile>
+    <Compile Include="Modal\Memployee.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Modal\Memployee.Designer.cs">
+      <DependentUpon>Memployee.cs</DependentUpon>
+    </Compile>
     <Compile Include="Modal\Mmanufacture.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Modal\Mmanufacture.Designer.cs">
       <DependentUpon>Mmanufacture.cs</DependentUpon>
     </Compile>
+    <Compile Include="Modal\Mposition.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Modal\Mposition.Designer.cs">
+      <DependentUpon>Mposition.cs</DependentUpon>
+    </Compile>
     <Compile Include="Modal\Mvehicle.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Modal\Mvehicle.Designer.cs">
       <DependentUpon>Mvehicle.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Position.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Position.Designer.cs">
+      <DependentUpon>Position.cs</DependentUpon>
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -115,6 +139,9 @@
     <EmbeddedResource Include="Customer.resx">
       <DependentUpon>Customer.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Employee.resx">
+      <DependentUpon>Employee.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Home.resx">
       <DependentUpon>Home.cs</DependentUpon>
     </EmbeddedResource>
@@ -124,11 +151,20 @@
     <EmbeddedResource Include="Modal\Mcustomer.resx">
       <DependentUpon>Mcustomer.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Modal\Memployee.resx">
+      <DependentUpon>Memployee.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Modal\Mmanufacture.resx">
       <DependentUpon>Mmanufacture.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Modal\Mposition.resx">
+      <DependentUpon>Mposition.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Modal\Mvehicle.resx">
       <DependentUpon>Mvehicle.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Position.resx">
+      <DependentUpon>Position.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
@@ -171,6 +207,9 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\employee.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\position.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

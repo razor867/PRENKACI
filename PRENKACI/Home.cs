@@ -53,7 +53,18 @@ namespace PRENKACI
 
         private void PcEmployee_Click(object sender, EventArgs e)
         {
+            this.Hide();
+            Employee employee = new Employee();
+            employee.ShowDialog();
+            this.Close();
+        }
 
+        private void PcPosition_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            Position position = new Position();
+            position.ShowDialog();
+            this.Close();
         }
     }
 }
